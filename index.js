@@ -13,9 +13,9 @@ app.get('/mail', async (req, res) => {
     const message = {
         from: {
             name: 'Dorcis Kirigha',
-            address: 'samuel.kirigha@thejitu.com'
+            address: 'dkirigha18@gmail.com'
         },
-        to: 'faithkihara3@gmail.com',
+        to: 'samuel.kirigha@thejitu.com',
         subject: 'Sending mails with nodemailer',
         text: 'Woow thats how i learned to send mails using nodemailer'
     }
