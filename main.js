@@ -1,25 +1,26 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer")
 
 const transport = nodemailer.createTransport(
     {
-        service: 'gmail',
+        service: "hotmail",
         auth: {
-            user: 'email@gmail.com',
-            pass: 'password'
+            user: 'sammydorcis@outlook.com',
+            pass: 'Sammy3646.'
         }
     }
 )
 
-const sendMail = async (message) => {
+const sendEmail = async (message) => {
     return new Promise((resolve, reject) => {
         transport.sendMail(message, (err, info) => {
             if (err) {
                 return reject(err)
             }
-            console.log(info.response)
+
+            // console.log(info.response)
             resolve(info.response)
         })
     })
 }
 
-module.exports = sendMail
+module.exports = sendEmail

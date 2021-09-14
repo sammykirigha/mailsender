@@ -1,5 +1,6 @@
 const express = require('express');
-const sendMail  = require('./main');
+const sendEmail = require('./main');
+
 
 const app = express();
 
@@ -12,16 +13,17 @@ app.get('/', (req, res) => {
 app.get('/mail', async (req, res) => {
     const message = {
         from: {
-            name: 'Dorcis Kirigha',
-            address: 'dkirigha18@gmail.com'
+            name: 'Samuel Kirigha',
+            address: 'sammydorcis@outlook.com'
         },
-        to: 'samuel.kirigha@thejitu.com',
+        to: 'dkirigha18@gmail.com',
         subject: 'Sending mails with nodemailer',
-        text: 'Woow thats how i learned to send mails using nodemailer'
+        text: 'Woow thats how i learned to send mails using nodemailer',
     }
 
     try {
-        await sendMail(message)
+        console.log(message);
+        await sendEmail(message)
         res.send('Email sent')
     } catch (error) {
         res.send('something wrong happened')
